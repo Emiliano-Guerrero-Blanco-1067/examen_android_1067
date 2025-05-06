@@ -1,43 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:act7_1067/pagina_inicial.dart';
+import 'package:act7_1067/range_slider.dart';
+import 'package:act7_1067/CheckboxListTile.dart';
+import 'package:act7_1067/Physical_model.dart';
+import 'package:act7_1067/FadeTransition.dart';
+import 'package:act7_1067/CascadeOperator.dart';
+import 'package:act7_1067/OrientationBuilder.dart';
+import 'package:act7_1067/Builder.dart';
+import 'package:act7_1067/PageViewBuilder.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiRutas());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiRutas extends StatelessWidget {
+  const MiRutas({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      title: "Rutas entre paginas",
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const PantallaUno(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/pantalla2': (context) => const PantallaDos(),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+        '/pantalla3': (context) => const PantallaTres(),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+        '/pantalla4': (context) => const PantallaCuatro(),
+
+        '/pantalla5': (context) => const PantallaCinco(),
+
+        '/pantalla6': (context) => const PantallaSeis(),
+
+        '/pantalla7': (context) => const PantallaSiete(),
+
+        '/pantalla8': (context) => const PantallaOcho(),
+
+        '/pantalla9': (context) => const PantallaNueve(),
+      },
     );
   }
 }
